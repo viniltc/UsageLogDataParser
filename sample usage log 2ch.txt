@@ -1,0 +1,48 @@
+Data Log: Walking Mode
+------------------------
+
+Period of Log:
+Start Date: 2024-08-01
+End Date: 2024-08-31
+Total Number of Days: 31
+
+Device Usage:
+Total Number of Days Used: 22
+Average Days Used per Week: 5.5 (79%)
+
+Steps:
+CH1 Total Steps: 15000
+CH2 Total Steps: 12500
+Steps per Active Day: 681
+CH1 Average Steps per Day: 681
+CH2 Average Steps per Day: 568
+
+Walks:
+Total Walks Initiated: 45
+Walks per Active Day: 2.05
+Average Pauses per Active Day: 2.05
+
+Walk Time:
+Total Walk Time: 20h 30m
+Average Walk Time per Active Day: 0h 55m
+
+Dose:
+Total Stim Time CH1: 18h
+Total Stim Time CH2: 16h
+Average Dose per Active Day CH1: 0h 49m
+Average Dose per Active Day CH2: 0h 43m
+
+Periods of Activity:
+High Activity Periods: 10
+Medium Activity Periods: 15
+Low Activity Periods: 25
+
+Steps in Active Periods:
+Steps in High Activity: 6000
+Steps in Medium Activity: 5000
+Steps in Low Activity: 4000
+
+Activity Time:
+High Activity Time: 10h 00m
+Medium Activity Time: 7h 30m
+Low Activity Time: 3h 00m
