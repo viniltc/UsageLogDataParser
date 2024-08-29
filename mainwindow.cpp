@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     // test git
+    ui->dataTableWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->dataTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 MainWindow::~MainWindow()
@@ -35,19 +37,47 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::displayParsedData()
 {
-    // For example, display some of the parsed data in the console or in a UI element
+
        qDebug() << "Start Date:" << walkingData.startDate.toString();
        qDebug() << "End Date:" << walkingData.endDate.toString();
        qDebug() << "Total Days:" << walkingData.totalDays;
 
-       // You can also display the parsed data in a QTextEdit or QLabel in your UI
+
        QString displayText = QString("Start Date: %1\nEnd Date: %2\nTotal Days: %3\nCH1 Total Steps: %4\n")
                                .arg(walkingData.startDate.toString())
                                .arg(walkingData.endDate.toString())
                                .arg(walkingData.totalDays)
                                .arg(walkingData.ch1TotalSteps);
 
-       // Assuming you have a QTextEdit widget named dataDisplayTextEdit in your UI
+
        ui->dataDisplayTextEdit->setPlainText(displayText);
+
+
+       ui->dataTableWidget->clear();
+
+
+       ui->dataTableWidget->setRowCount(4);  // Adjust the number of rows based on your data
+       ui->dataTableWidget->setColumnCount(2);  // Two columns: one for labels and one for values
+
+
+       QStringList headers;
+       headers << "Property" << "Value";
+       ui->dataTableWidget->setHorizontalHeaderLabels(headers);
+
+
+       ui->dataTableWidget->setItem(0, 0, new QTableWidgetItem("Start Date"));
+       ui->dataTableWidget->setItem(0, 1, new QTableWidgetItem(walkingData.startDate.toString()));
+
+       ui->dataTableWidget->setItem(1, 0, new QTableWidgetItem("End Date"));
+       ui->dataTableWidget->setItem(1, 1, new QTableWidgetItem(walkingData.endDate.toString()));
+
+       ui->dataTableWidget->setItem(2, 0, new QTableWidgetItem("Total Days"));
+       ui->dataTableWidget->setItem(2, 1, new QTableWidgetItem(QString::number(walkingData.totalDays)));
+
+       ui->dataTableWidget->setItem(3, 0, new QTableWidgetItem("CH1 Total Steps"));
+       ui->dataTableWidget->setItem(3, 1, new QTableWidgetItem(QString::number(walkingData.ch1TotalSteps)));
+
+
+    //   ui->dataTableWidget->resizeColumnsToContents();
 }
 
